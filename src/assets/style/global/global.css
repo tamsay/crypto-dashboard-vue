@@ -1,0 +1,36 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem;
+  }
+  .flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem;
+  }
+  .row, .col{
+    margin: 0rem;
+    padding: 0rem;
+  }
+  body{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+  }
+  ul, li, p, span{
+    margin: 0rem;
+    padding: 0rem;
+    line-height: 1; 
+  }
