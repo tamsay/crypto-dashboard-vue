@@ -7,29 +7,31 @@
 		<div class="nav-wrapper">
 			<ul class="flex-col">
 				<li class="flex-row">
-					<span class="icon"><Icon :icon="icons.homeAlt" /></span>Home
+					<span class="icon"><Icon :icon="icons.homeAlt" /></span>
+					<span>Home</span>
+					
 				</li>
 				<li class="flex-row">
 					<span class="icon"
-						><Icon :icon="icons.trophyOutlined" /></span
-					>Projects
+						><Icon :icon="icons.trophyOutlined" /></span>
+						<span>Projects</span>
 				</li>
 				<li class="flex-row">
 					<span class="icon"><Icon :icon="icons.bankIcon" /></span
-					>Billings
+					><span>Billings</span>
 				</li>
 				<li class="flex-row">
 					<span class="icon"><Icon :icon="icons.profileMale" /></span
-					>Team Members
+					><span>Team Members</span>
 				</li>
 				<li class="flex-row">
 					<span class="icon"
 						><Icon :icon="icons.bxBarChartAlt2" /></span
-					>Statistics
+					><span>Statistics</span>
 				</li>
 				<li class="flex-row">
 					<span class="icon"><Icon :icon="icons.settingsIcon" /></span
-					>Settings
+					><span>Settings</span>
 				</li>
 			</ul>
 		</div>
@@ -98,7 +100,7 @@ ul {
 	padding: 0rem;
 }
 li {
-	list-style-type: none;
+	/* list-style-type: none;
 	width: 100%;
 	padding: 1rem;
 	margin: 0.5rem 0rem;
@@ -108,38 +110,46 @@ li {
 	text-align: left;
 	justify-content: flex-start;
 	font-size: 0.875rem;
-	box-shadow: 0 0 0.75rem rgba(231, 223, 223, 0.25);
-	transition: transform 1s ease-in-out;
+	border-radius: 0.5rem; */
 
-	/* box-shadow: 0 9px 0 rgba(219, 31, 5, 1),0px 9px 25px rgba(0, 0, 0, .7);
-    background-color: rgba(219, 87, 51, 1);
-    color: rgba(255, 255, 255, 1);   */
+height: 80px;
+width: 100%;
+padding: 1rem;
+margin: 0.5rem 0rem;
+	position: relative;
+	display: inline-block;
+	background: linear-gradient(180deg, #282828, #202020);
+	box-shadow: inset -8px 0 8px rgba(0,0,0, 0.15), inset 0 -8px 8px rgba(0,0,0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0,0,0,0.4);
+	overflow: hidden;
+	color: white;
 
+}
+li::before{
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	bottom: 14px;
+	right: 12px;
+	background: linear-gradient(180deg, #232323, #4a4a4a);
 	border-radius: 0.5rem;
-	/* background: linear-gradient(145deg, #2b4715, #335519); */
-	box-shadow: 2px 2px 8px #253d12, -2px -2px 8px #3b611c;
-
-	/* border: none;
- color: #090909;
- padding: 0.7em 1.7em;
- font-size: 18px;
- border-radius: 0.5em;
- background: #e8e8e8;
- border: 1px solid #e8e8e8;
- transition: all .3s;
- box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff; */
+	box-shadow: -10px -10px 10px rgba(255,255,255, 0.25), 10px 5px 10px rgba(0,0,0, 0.15);
+	border-left: 1px solid #0004;
+	border-bottom: 1px solid #0004;
+	border-top: 1px solid #0009;
 }
 li:hover {
 	background-color: #f2f2f2;
 	color: black;
 }
 li span {
+	position: relative;
 	line-height: 1;
+	color: white;
 }
 .icon {
-	font-size: 1.5rem;
-	margin-right: 1.5rem;
+	font-size: 1.25rem;
+	margin-right: 0.875rem;
 }
 .footer-wrapper {
 	margin-top: auto;
