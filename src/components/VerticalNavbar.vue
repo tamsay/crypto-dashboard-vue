@@ -112,34 +112,38 @@ li {
 	font-size: 0.875rem;
 	border-radius: 0.5rem; */
 
-height: 80px;
+height: auto;
 width: 100%;
-padding: 1rem;
-margin: 0.5rem 0rem;
+padding: 1rem 1rem 1rem 2rem;
+margin: 1rem 0rem;
 	position: relative;
 	display: inline-block;
-	background: linear-gradient(180deg, #282828, #202020);
-	box-shadow: inset -8px 0 8px rgba(0,0,0, 0.15), inset 0 -8px 8px rgba(0,0,0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0,0,0,0.4);
+	/* background: linear-gradient(180deg, #282828, #202020); */
+	background: #4fbe8e;
+	/* box-shadow:  -8px 0 8px rgba(0,0,0, 0.15),  0 -8px 8px rgba(0,0,0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0,0,0,0.4); */
 	overflow: hidden;
 	color: white;
+	border-radius: 0.5rem;
 
 }
 li::before{
 	content: '';
 	position: absolute;
-	top: 3px;
-	left: 4px;
-	bottom: 14px;
+	top: 0px;
+	left: 12px;
+	bottom: 0px;
 	right: 12px;
 	background: linear-gradient(180deg, #232323, #4a4a4a);
+	background: #43a57a;
 	border-radius: 0.5rem;
-	box-shadow: -10px -10px 10px rgba(255,255,255, 0.25), 10px 5px 10px rgba(0,0,0, 0.15);
-	border-left: 1px solid #0004;
-	border-bottom: 1px solid #0004;
-	border-top: 1px solid #0009;
+	box-shadow:  -40px 0px 1px 40px #43a57b6b, 40px 0px 1px 40px #43a57b65;
+	/* box-shadow:  -10px -10px 10px rgba(255,255,255, 0.25), 10px 5px 10px rgba(0,0,0, 0.15) ; */
+	border-left: none;
+	border-right: none;
+	/* border-top: 1px solid #0009; */
 }
 li:hover {
-	background-color: #f2f2f2;
+	/* background-color: #f2f2f2; */
 	color: black;
 }
 li span {
