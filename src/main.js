@@ -5,6 +5,7 @@ import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import './assets/style/global/global.css'
 import VueApexCharts from "vue3-apexcharts";
+import router from './router'
 
 
-createApp(App).use(VueApexCharts).mount('#app')
+createApp(App).use(router).use(VueApexCharts).mount('#app')
