@@ -57,6 +57,7 @@ export default {
 	width: fit-content;
 	border-radius: 0.25rem;
 	font-weight: bold;
+	outline: none;
 }
 .toggler {
 	color: white;

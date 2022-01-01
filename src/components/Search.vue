@@ -11,6 +11,7 @@
 			placeholder="Search for stats"
 			v-model="searchValue"
 			v-on:keyup.enter="searchInput"
+			v-on:input="searchInput"
 		/>
 	</div>
 </template>
@@ -31,7 +32,11 @@ export default {
 		searchInput(e) {
 			console.log(e.target.value);
 			// this.searchValue = e.target.value.toUpperCase();
+			this.$emit('searchInputValue', this.searchValue)
 		},
+		// emitSearchInput() {
+
+		// }
 	},
 };
 </script>
@@ -42,7 +47,7 @@ export default {
 	padding: 0.5em;
 	border-radius: 0.25rem;
 	width: 70%;
-	margin-bottom: 1rem;
+	margin: 0rem;
 	justify-content: flex-start;
 }
 .icon {
@@ -58,9 +63,20 @@ export default {
 	color: white;
 	font-weight: 450;
 }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+	transition: background-color 50000s;
+	-webkit-text-fill-color: #fff;
+}
 .searchInput::placeholder {
 	color: white;
 	font-weight: lighter;
+}
+.searchInput::focus {
+	color: red;
+	font-weight: lighter;
+	outline: none;
+	border: none;
+	background-color: transparent;
 }
 p {
 	color: white;

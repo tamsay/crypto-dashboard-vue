@@ -19,7 +19,7 @@
 		</div>
 	</div>
 
-	<div class="wrapper flex-col middle">
+	<!-- <div class="wrapper flex-col middle">
 		<div class="icon-div flex-row"><Icon class="icon" :icon="icons.fireIcon" /></div>
 		<div class="details-section flex-col col">
 			<div class="flex-col div1">
@@ -53,7 +53,7 @@
 				</p>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 </div>
 
@@ -101,14 +101,14 @@ export default {
 }
 .top {
 	position: absolute;
-	left: 10%;
+	left: 0%;
 	top: 10%;
 	z-index: 1000;
 }
 .middle{
 	top: 10%;
 	position: absolute;
-	left: 10%;
+	left: 0%;
 	z-index: 99;
 	transform: rotate(17.5deg);
 	transform-origin: 50% 100%;
@@ -116,7 +116,7 @@ export default {
 }
 .bottom{
 	position: absolute;
-	left: 10%;
+	left: 0%;
 	top: 10%;
 	transform: rotate(39.5deg);
 transform-origin: 50% 90%;

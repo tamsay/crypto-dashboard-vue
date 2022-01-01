@@ -14,7 +14,7 @@
 				:gainIndicator="card.gainIndicator"
 				:percentageChange="card.percentageChange"
 				:percentageCount="card.percentageCount"
-				class=""
+				:size="card.size"
 			/>
 		</div>
 	</div>
@@ -34,7 +34,7 @@ export default {
 					currentPrice: "60000",
 					gainIndicator: "+",
 					percentageChange: "4",
-					percentageCount: "345"
+					percentageCount: "345",
 				},
 				{
 					icon: "B",

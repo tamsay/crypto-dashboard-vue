@@ -1,17 +1,123 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <h1>HOME</h1>
-  </div>
+	<div class="page-container row">
+		<div class="col-md-9 page-content-wrapper">
+			<Search @searchInputValue="searchValue($event)" />
+			<PageHeader />
+			<MainChart />
+			<FeaturedCards />
+		</div>
+		<div class="col-md-3 aside-wrapper">
+			<BalanceCard />
+			<div class="asideCardsWrapper">
+				<div v-for="(card, index) in cardArray" v-bind:key="index">
+				<CryptoCard
+					:icon="card.icon"
+					:coinName="card.coinName"
+					:ticker="card.ticker"
+					:currency="card.currency"
+					:currentPrice="card.currentPrice"
+					:gainIndicator="card.gainIndicator"
+					:percentageChange="card.percentageChange"
+					:percentageCount="card.percentageCount"
+					:size="card.size"
+				/>
+				</div>
+			</div>
+		
+			<div class="chartWrapper flex-row">
+				<SidebarChart />
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Search from "../components/Search.vue";
+import PageHeader from "../components/PageHeader.vue";
+import MainChart from "../components/MainChart.vue";
+import FeaturedCards from "../components/FeaturedCards.vue";
+import BalanceCard from "../components/BalanceCard.vue";
+import SidebarChart from "../components/SidebarChart.vue";
+import CryptoCard from "../components/CryptoCard.vue";
 
 export default {
-  name: 'Home',
-  components: {
+	name: "App",
+	components: {
+		Search,
+		PageHeader,
+		MainChart,
+		FeaturedCards,
+		BalanceCard,
+		SidebarChart,
+		CryptoCard
+	},
+	data: () => {
+		return {
+			cardArray: [
+				{
+					icon: "B",
+					coinName: "Bitcoin",
+					ticker: "BTC",
+					currency: "$",
+					currentPrice: "60000",
+					gainIndicator: "+",
+					percentageChange: "4",
+					percentageCount: "345",
+          size: "small"
+				},
+				{
+					icon: "B",
+					coinName: "Bitcoin",
+					ticker: "BTC",
+					currency: "$",
+					currentPrice: "60000",
+					gainIndicator: "+",
+					percentageChange: "4",
+					percentageCount: "345",
+          size: "small"
+				},
+			],
+      searchKeyword: ''
+		};
+	},
+  methods: {
+    searchValue(value){
+      this.searchKeyword = value;
+    }
   }
-}
+};
 </script>
+
+<style scoped>
+.page-container {
+	background-color: #161a1e;
+	/* height: 100vh; */
+}
+.page-content-wrapper {
+	margin: 0rem;
+	padding: 1rem 0.5rem;
+	color: white;
+  height: 100%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* overflow-y: auto; */
+  /* width: 100%; */
+}
+.aside-wrapper {
+	margin: 0rem;
+	padding: 0rem 0rem;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* height: 100vh; */
+}
+.asideCardsWrapper{
+	margin-top: 1rem;
+}
+.chartWrapper{
+	justify-content: center;
+	margin-top: 1rem;
+}
+</style>

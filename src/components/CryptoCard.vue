@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper flex-col">
+	<div class="wrapper flex-col" :class="size">
 		<div class="icon-div flex-row">
 			<span>
 			{{ icon }}
@@ -38,7 +38,8 @@ export default {
 		"currentPrice",
 		"gainIndicator",
 		"percentageChange",
-		"percentageCount"
+		"percentageCount",
+		"size"
 	],
 	components: {},
 	methods: {}
@@ -53,6 +54,9 @@ export default {
 	margin: 0.625rem 0rem;
 	padding: 1rem 0.75rem;
 }
+.small{
+	padding: 0.75rem 1rem;
+}
 .icon-div{
 	justify-content: flex-start;
 }
@@ -65,11 +69,17 @@ export default {
 	color: black;
 	background-color: white;
 }
+.small .icon-div span{
+	padding: 0.125rem 0.25rem;
+}
 .details-section {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: nowrap;
 	margin: 1rem 0rem;
+}
+.small .details-section{
+	margin: 0.5rem 0rem;
 }
 .div1 {
 	align-items: flex-start;
@@ -79,6 +89,9 @@ export default {
 	font-size: 1rem;
 	font-weight: bold;
 	margin-bottom: 0.5rem;
+}
+.small .coin-name{
+	margin-bottom: 0.25rem;
 }
 .ticker {
 	font-weight: bold;
@@ -98,6 +111,9 @@ export default {
 	font-size: 1rem;
 	margin-bottom: 0.5rem;
 	font-weight: bold;
+}
+.small .current-price{
+	margin-bottom: 0.25rem;
 }
 .percentage-change {
 	font-weight: bold;

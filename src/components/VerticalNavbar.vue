@@ -6,33 +6,38 @@
 
 		<div class="nav-wrapper">
 			<ul class="flex-col">
-				<li class="flex-row">
+
+				<router-link :to="{name: 'home'}" class="nav-link">
 					<span class="icon"><Icon :icon="icons.homeAlt" /></span>
 					<span>Home</span>
-					
-				</li>
-				<li class="flex-row">
+				</router-link>
+
+				<router-link :to="{name: 'projects'}" class="nav-link">
 					<span class="icon"
 						><Icon :icon="icons.trophyOutlined" /></span>
 						<span>Projects</span>
-				</li>
-				<li class="flex-row">
+				</router-link>
+
+				<router-link :to="{name: 'billings'}" class="nav-link">
 					<span class="icon"><Icon :icon="icons.bankIcon" /></span
 					><span>Billings</span>
-				</li>
-				<li class="flex-row">
+				</router-link>
+
+				<router-link :to="{name: 'teamMembers'}" class="nav-link">
 					<span class="icon"><Icon :icon="icons.profileMale" /></span
 					><span>Team Members</span>
-				</li>
-				<li class="flex-row">
-					<span class="icon"
+				</router-link>
+
+				<router-link :to="{name: 'statistics'}" class="nav-link">
+						<span class="icon"
 						><Icon :icon="icons.bxBarChartAlt2" /></span
 					><span>Statistics</span>
-				</li>
-				<li class="flex-row">
+				</router-link>
+
+				<router-link :to="{name: 'settings'}" class="nav-link">
 					<span class="icon"><Icon :icon="icons.settingsIcon" /></span
 					><span>Settings</span>
-				</li>
+				</router-link>
 			</ul>
 		</div>
 
@@ -81,6 +86,8 @@ export default {
 	margin: 0rem;
 	justify-content: flex-start;
 	height: 100%;
+	/* width: 90%;
+	background-color: rgb(40, 107, 231); */
 }
 .logo-div {
 	width: 100%;
@@ -98,55 +105,25 @@ ul {
 	width: 100%;
 	margin: 0rem;
 	padding: 0rem;
-}
-li {
-	/* list-style-type: none;
-	width: 100%;
-	padding: 1rem;
-	margin: 0.5rem 0rem;
-	color: white;
-	border-radius: 0.25rem;
-	cursor: pointer;
-	text-align: left;
-	justify-content: flex-start;
-	font-size: 0.875rem;
-	border-radius: 0.5rem; */
-
-height: auto;
-width: 100%;
-padding: 1rem 1rem 1rem 2rem;
-margin: 1rem 0rem;
-	position: relative;
-	display: inline-block;
-	/* background: linear-gradient(180deg, #282828, #202020); */
-	background: #4fbe8e;
-	/* box-shadow:  -8px 0 8px rgba(0,0,0, 0.15),  0 -8px 8px rgba(0,0,0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0,0,0,0.4); */
-	overflow: hidden;
-	color: white;
-	border-radius: 0.5rem;
 
 }
-li::before{
-	content: '';
-	position: absolute;
-	top: 0px;
-	left: 12px;
-	bottom: 0px;
-	right: 12px;
-	background: linear-gradient(180deg, #232323, #4a4a4a);
-	background: #43a57a;
+.nav-link {
+	height: auto;
+	width: 95%;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 1rem 0rem;
 	border-radius: 0.5rem;
-	box-shadow:  -40px 0px 1px 40px #43a57b6b, 40px 0px 1px 40px #43a57b65;
-	/* box-shadow:  -10px -10px 10px rgba(255,255,255, 0.25), 10px 5px 10px rgba(0,0,0, 0.15) ; */
-	border-left: none;
-	border-right: none;
-	/* border-top: 1px solid #0009; */
 }
-li:hover {
-	/* background-color: #f2f2f2; */
-	color: black;
+.nav-link:hover {
+	box-shadow: rgb(199, 238, 231) 0px 0px 8px 1px inset;
+	background-color: #4fbe8e;
 }
-li span {
+.router-link-active {
+	box-shadow: rgb(199, 238, 231)  0px 0px 8px 1px inset;
+	background-color: #4fbe8e;
+	font-weight: bold;
+}
+.nav-link span {
 	position: relative;
 	line-height: 1;
 	color: white;
