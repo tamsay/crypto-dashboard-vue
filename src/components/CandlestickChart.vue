@@ -23,8 +23,10 @@ export default {
 <style scoped>
 #chart {
 	width: 100%;
-	color: black;
+	color: white;
 	height: 100%;
 }
-
+#chart .apexcharts-title-text{
+	fill: white;
+}
 </style>

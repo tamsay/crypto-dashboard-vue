@@ -1,12 +1,12 @@
 <template>
 	<div class="page-container row">
-		<div class="col-md-9 page-content-wrapper">
+		<div class="col-md-9 page-content-wrapper flex-col">
 			<Search @searchInputValue="searchValue($event)" />
 			<PageHeader />
 			<MainChart />
 			<FeaturedCards />
 		</div>
-		<div class="col-md-3 aside-wrapper">
+		<div class="col-md-3 aside-wrapper flex-col">
 			<BalanceCard />
 			<div class="asideCardsWrapper">
 				<div v-for="(card, index) in cardArray" v-bind:key="index">
@@ -91,27 +91,14 @@ export default {
 <style scoped>
 .page-container {
 	background-color: #161a1e;
-	/* height: 100vh; */
 }
 .page-content-wrapper {
-	margin: 0rem;
-	padding: 1rem 0.5rem;
 	color: white;
-  height: 100%;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
-  /* overflow-y: auto; */
-  /* width: 100%; */
+  justify-content: space-between;
 }
 .aside-wrapper {
-	margin: 0rem;
-	padding: 0rem 0rem;
 	color: white;
-	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
-	/* height: 100vh; */
 }
 .asideCardsWrapper{
 	margin-top: 1rem;
@@ -119,5 +106,8 @@ export default {
 .chartWrapper{
 	justify-content: center;
 	margin-top: 1rem;
+}
+@media all and (min-width:768px){
+
 }
 </style>

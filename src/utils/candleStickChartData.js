@@ -249,7 +249,7 @@ const chartData = {
           },
           title: {
             text: 'CandleStick Chart',
-            align: 'left'
+            align: 'left',
           },
           xaxis: {
             type: 'datetime'

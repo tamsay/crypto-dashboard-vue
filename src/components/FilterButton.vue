@@ -30,7 +30,7 @@ export default {
 <style scoped>
 button {
 	background-color: gray;
-	padding: 0.5rem 1rem;
+	padding: 0.25rem 0.625rem;
 	border-radius: 0.25rem;
 	border: none;
 	outline: none;
@@ -40,7 +40,8 @@ button {
 	font-weight: bold;
 }
 .icon {
-	font-size: 1rem;
+	font-size: 1.25rem;
 	margin-left: 0.5rem;
+	line-height: 1;
 }
 </style>

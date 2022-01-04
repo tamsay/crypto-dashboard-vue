@@ -44,16 +44,21 @@ export default {
 </script>
 
 <style scoped>
+.chart-wrapper {
+	margin: 0.5rem 0rem;
+}
 .header {
 	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 1rem;
 }
 .currency-dropdown {
-	padding: 0.25rem 0.5rem;
-	font-size: 0.75rem;
+	padding: 0.25rem 0.625rem 0rem 0.25rem;
+	font-size: 0.875rem;
 	color: white;
 	background-color:gray;
 	justify-content: space-around;
+	align-items: center;
 	width: fit-content;
 	border-radius: 0.25rem;
 	font-weight: bold;

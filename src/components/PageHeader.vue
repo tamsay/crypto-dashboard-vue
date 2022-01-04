@@ -19,7 +19,7 @@
 
 <script>
 import FilterButton from "./FilterButton.vue";
-// import "./PageHeaderStyles.scss";
+
 export default {
 	data: () => {
 		return {
@@ -39,15 +39,15 @@ export default {
 <style scoped>
 .wrapper {
 	justify-content: space-between;
+	margin: 0.5rem 0rem;
 }
-
 .statistics-div {
 	align-items: flex-start;
 	margin-bottom: 1rem;
 }
 .current-value {
 	margin-right: 0.25rem;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: bold;
 }
 .currency {
@@ -57,7 +57,7 @@ export default {
 	font-weight: bold;
 }
 .percentage-change {
-	margin-left: 0.875rem;
+	margin-left: 0.5rem;
 	color: rgb(6, 187, 6);
 }
 .filter-btn-div {

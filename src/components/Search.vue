@@ -31,12 +31,8 @@ export default {
 	methods: {
 		searchInput(e) {
 			console.log(e.target.value);
-			// this.searchValue = e.target.value.toUpperCase();
 			this.$emit('searchInputValue', this.searchValue)
 		},
-		// emitSearchInput() {
-
-		// }
 	},
 };
 </script>
@@ -46,8 +42,8 @@ export default {
 	background-color: gray;
 	padding: 0.5em;
 	border-radius: 0.25rem;
-	width: 70%;
-	margin: 0rem;
+	width: 100%;
+	margin: 0.5rem 0rem;
 	justify-content: flex-start;
 }
 .icon {
@@ -80,5 +76,15 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 p {
 	color: white;
+}
+@media all and (min-width:768px){
+	.wrapper {
+	background-color: gray;
+	padding: 0.5em;
+	border-radius: 0.25rem;
+	width: 70%;
+	margin: 0rem;
+	justify-content: flex-start;
+}
 }
 </style>
