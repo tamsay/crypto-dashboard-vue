@@ -37,13 +37,15 @@ export default {
     width: 100%;
     position: fixed;
     z-index: 10000;
-    background-color: blue;
+    background-color: #161a1e;
     overflow-y: auto;
 }
 .modal-wrapper {
     position: relative;
-    background-color: pink;
+    background-color: #161a1e67;
     width: 100%;
+    height: 100%;
+    padding: 1rem 0rem;
 }
 
 </style>

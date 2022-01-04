@@ -87,7 +87,6 @@ export default {
 	},
 	props: ["showToggler"],
 	mounted(){
-		console.log(this.showToggler, "outside");
 	}
 };
 </script>
