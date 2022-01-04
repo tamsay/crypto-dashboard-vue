@@ -39,6 +39,7 @@ export default {
 <style>
 .component-wrapper{
     justify-content: space-between;
+    padding: 0.25rem !important;
 }
 .logo-div {
 	width: 100%;
@@ -57,6 +58,5 @@ export default {
 .toggler-icon {
 	font-size: 3rem;
 	color: white;
-	margin-left: 0.5rem;
 }
 </style>

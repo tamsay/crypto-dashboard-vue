@@ -7,7 +7,7 @@
 		<div class="col-lg-2 vertical-nav-div">
 			<VerticalNavbar @toggleMenu = "toggleVerticalMenu($event, data)" />
 		</div>
-    <div class="col-lg-10 page-content-wrapper">
+    <div class="col-lg-10 flex-row page-content-wrapper">
       <router-view/>
     </div>
 	</div>
@@ -60,10 +60,10 @@ export default {
 	display: none;
 }
 .page-content-wrapper {
-	margin: 2rem 0rem 0rem 0rem;
-	padding: 1rem;
+	margin: 4rem 0rem 0rem 0rem;
+	padding: 0.5rem;
 	color: white;
-  height: 100%;
+  min-height: 100vh;
   overflow-y: hidden;
 }
 @media all and (min-width:1200px){

@@ -123,6 +123,68 @@ ul {
 	height: auto;
 	width: 95%;
 	padding: 1rem 1rem 1rem 1rem;
+	margin: 0.5rem 0rem;
+	border-radius: 0.5rem;
+}
+.nav-link:hover {
+	box-shadow: rgb(199, 238, 231) 0px 0px 8px 1px inset;
+	background-color: #4fbe8e;
+}
+.router-link-active {
+	box-shadow: rgb(199, 238, 231)  0px 0px 8px 1px inset;
+	background-color: #4fbe8e;
+	font-weight: bold;
+}
+.nav-link span {
+	position: relative;
+	line-height: 1;
+	color: white;
+}
+.icon {
+	font-size: 1.25rem;
+	margin-right: 0.875rem;
+}
+.footer-wrapper {
+	margin-top: auto;
+	margin-bottom: 2rem;
+	width: 100%;
+}
+.footer-wrapper img {
+	width: 5rem;
+	border-radius: 50%;
+	padding: 0rem;
+}
+@media all and (min-width:1200px){
+	.page-wrapper {
+	padding: 0.5rem;
+	margin: 0rem;
+	justify-content: flex-start;
+	height: 100%;
+	/* width: 90%;
+	background-color: rgb(40, 107, 231); */
+}
+.logo-div {
+	width: 100%;
+	justify-content: flex-start;
+}
+.toggler-icon {
+	font-size: 3rem;
+	color: white;
+	margin-left: 0.5rem;
+}
+.nav-wrapper {
+	width: 100%;
+}
+ul {
+	width: 100%;
+	margin: 0rem;
+	padding: 0rem;
+
+}
+.nav-link {
+	height: auto;
+	width: 95%;
+	padding: 1rem 1rem 1rem 1rem;
 	margin: 1rem 0rem;
 	border-radius: 0.5rem;
 }
@@ -153,5 +215,6 @@ ul {
 	width: 5rem;
 	border-radius: 50%;
 	padding: 0rem;
+}
 }
 </style>
