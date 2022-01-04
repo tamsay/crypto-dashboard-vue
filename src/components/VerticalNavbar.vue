@@ -1,10 +1,10 @@
 <template>
 	<div class="page-wrapper flex-col">
-		<div class="logo-div flex-row">
-			<Icon :icon="icons.menuBoxed" class="toggler-icon" />
+		<div class="logo-div flex-row" v-if="toggler != undefined ? toggler : true ">
+			<Icon :icon="icons.menuBoxed" class="toggler-icon" @click="toggleMenu()"/>
 		</div>
 
-		<div class="nav-wrapper">
+		<div class="nav-wrapper" v-show="showMenu">
 			<ul class="flex-col">
 
 				<router-link :to="{name: 'home'}" class="nav-link">
@@ -41,7 +41,7 @@
 			</ul>
 		</div>
 
-		<div class="footer-wrapper flex-row">
+		<div class="footer-wrapper flex-row" v-show="showThumbnail">
 			<img :src="logo" alt="logo" class="logo" />
 		</div>
 	</div>
@@ -57,9 +57,8 @@ import profileMale from "@iconify-icons/et/profile-male";
 import bxBarChartAlt2 from "@iconify-icons/bx/bx-bar-chart-alt-2";
 import settingsIcon from "@iconify-icons/ci/settings";
 import menuBoxed from "@iconify-icons/gg/menu-boxed";
-
 export default {
-	data: () => {
+	data(){
 		return {
 			logo: logo,
 			icons: {
@@ -71,11 +70,25 @@ export default {
 				settingsIcon,
 				menuBoxed,
 			},
+			showMenu: true,
+			showThumbnail: true,
+			toggler: this.showToggler,
 		};
 	},
 	components: {
 		Icon,
 	},
+	methods: {
+		toggleMenu(){
+			this.showMenu = !this.showMenu;
+			this.showThumbnail = !this.showThumbnail;
+			this.$emit("toggleMenu", this.showMenu)
+		},
+	},
+	props: ["showToggler"],
+	mounted(){
+		console.log(this.showToggler, "outside");
+	}
 };
 </script>
 
