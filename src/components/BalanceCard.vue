@@ -11,9 +11,11 @@
 
 			<div class="flex-col div3">
 				<p class="current-price">{{ currency }}{{ currentPrice }}</p>
-				<p class="percentage-change">
-					{{ gainIndicator }}{{ percentageChange }}%
-					<Icon :icon="icons.arrowUpRight" />
+				<p :class="['percentage-change', percentageChange >= 0 ? 'positive' : 'negative']">
+					{{ percentageChange >= 0 ? `+${percentageChange}` : `${percentageChange}`}}%
+					<Icon v-if="percentageChange >= 0" :icon="icons.arrowUpRight" />
+					<Icon v-else :icon="icons.arrowDownRight" />
+					
 				</p>
 			</div>
 		</div>
@@ -63,25 +65,28 @@
 import { Icon } from "@iconify/vue";
 import fireIcon from "@iconify-icons/noto/fire";
 import arrowUpRight from "@iconify-icons/akar-icons/arrow-up-right";
+import arrowDownRight from '@iconify-icons/akar-icons/arrow-down-right';
 
 export default {
 	data: () => {
 		return {
-			icon: "B",
 			cardTitle: "Total Balance",
-			balanceValue: "3,600,000",
+			balanceValue: 3600000,
 			currency: "$",
-			currentPrice: "600000",
-			gainIndicator: "+",
-			percentageChange: "4",
+			currentPrice: 600000,
+			percentageChange: -40,
 			icons: {
 				fireIcon,
-				arrowUpRight
+				arrowUpRight,
+				arrowDownRight
 			}
 		};
 	},
 	components: { Icon },
-	methods: {}
+	methods: {},
+	mounted(){
+		// this.
+	}
 };
 </script>
 
@@ -119,7 +124,7 @@ export default {
 	left: 0%;
 	top: 10%;
 	transform: rotate(39.5deg);
-transform-origin: 50% 90%;
+	transform-origin: 50% 90%;
 	background-color: red;
 }
 .icon-div {
@@ -158,6 +163,5 @@ transform-origin: 50% 90%;
 	font-weight: bold;
 	font-size: 1rem;
 	margin-bottom: 1rem;
-	color: rgb(68, 230, 68);
 }
 </style>
