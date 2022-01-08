@@ -70,10 +70,16 @@ export default {
 
 <style scoped>
 .component-wrapper {
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-wrap: wrap;
 }
 .card-wrapper {
-	min-width: 32%;
+	min-width: 100%;
+}
+
+@media all and (min-width: 576px){
+	.card-wrapper {
+		min-width: 45%;
+	}
 }
 </style>

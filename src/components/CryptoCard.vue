@@ -5,15 +5,17 @@
 			{{ icon }}
 			</span>
 		</div>
-		<div class="details-section flex-row row">
-			<div class="col-4 flex-col div1">
+		<div class="details-section flex-row">
+			<div class="flex-col details-sub-div div1">
 				<p class="coin-name">{{ coinName }}</p>
 				<p class="ticker">{{ ticker }}</p>
 			</div>
 
-			<div class="col-4 flex-col div2">mini chart</div>
+			<div class="flex-col details-sub-div div2">
+				<img :src="miniChart" alt="mini-chart">
+			</div>
 
-			<div class="col-4 flex-col div3">
+			<div class="flex-col details-sub-div div3">
 				<p class="current-price">{{ currency }}{{ currentPrice }}</p>
 				<p class="percentage-change">
 					{{ gainIndicator }}{{ percentageChange }}({{
@@ -26,9 +28,13 @@
 </template>
 
 <script>
+import MiniChart from "../assets/images/mini-chart.png"
+
 export default {
 	data: () => {
-		return {};
+		return {
+			miniChart: MiniChart
+		};
 	},
 	props: [
 		"icon",
@@ -53,6 +59,7 @@ export default {
 	border-radius: 0.5rem;
 	margin: 0.625rem 0rem;
 	padding: 1rem 0.75rem;
+	width: 100%;
 }
 .small{
 	padding: 0.75rem 1rem;
@@ -76,14 +83,18 @@ export default {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: nowrap;
-	margin: 1rem 0rem;
+	margin: 1rem 0rem 0rem 0rem;
+	width: 100%;
+	overflow-x: auto;
 }
 .small .details-section{
 	margin: 0.5rem 0rem;
 }
+.details-sub-div{
+	min-width: 33.33%;
+}
 .div1 {
 	align-items: flex-start;
-	width: auto;
 }
 .coin-name {
 	font-size: 1rem;
@@ -98,14 +109,15 @@ export default {
 	font-size: 0.625rem;
 }
 .div2 {
-	width: auto;
 	font-weight: bold;
 	font-size: 0.875rem;
-	padding: 0rem 0.5rem;
+	padding: 0rem 0.25rem;
 }
+.div2 img {
+	width: 100%;
+	}
 .div3 {
 	align-items: flex-end;
-	width: auto;
 }
 .current-price {
 	font-size: 1rem;
