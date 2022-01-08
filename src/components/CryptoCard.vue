@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper flex-col" :class="size">
 		<div class="icon-div flex-row">
-			<span>
+			<span :style = "{backgroundColor : iconColor}" >
 			{{ icon }}
 			</span>
 		</div>
@@ -17,8 +17,8 @@
 
 			<div class="flex-col details-sub-div div3">
 				<p class="current-price">{{ currency }}{{ currentPrice }}</p>
-				<p class="percentage-change">
-					{{ gainIndicator }}{{ percentageChange }}({{
+				<p :class="['percentage-change', percentageChange >= 0 ? 'positive' : 'negative']">
+					{{ percentageChange >= 0 ? `+${percentageChange}` : `${percentageChange}`}}{{' '}}({{
 						percentageCount
 					}})
 				</p>
@@ -33,16 +33,16 @@ import MiniChart from "../assets/images/mini-chart.png"
 export default {
 	data: () => {
 		return {
-			miniChart: MiniChart
+			miniChart: MiniChart,		  
 		};
 	},
 	props: [
 		"icon",
+		"iconColor",
 		"coinName",
 		"ticker",
 		"currency",
 		"currentPrice",
-		"gainIndicator",
 		"percentageChange",
 		"percentageCount",
 		"size"
@@ -72,9 +72,10 @@ export default {
 	padding: 0.25rem 0.5rem;
 	line-height: 1;
 	margin: 0rem;
-	border: 1px solid white;
+	border: none;
 	color: black;
 	background-color: white;
+	font-weight: bold;
 }
 .small .icon-div span{
 	padding: 0.125rem 0.25rem;
@@ -97,7 +98,7 @@ export default {
 	align-items: flex-start;
 }
 .coin-name {
-	font-size: 1rem;
+	font-size: 1.125rem;
 	font-weight: bold;
 	margin-bottom: 0.5rem;
 }
@@ -106,11 +107,9 @@ export default {
 }
 .ticker {
 	font-weight: bold;
-	font-size: 0.625rem;
+	font-size: 0.875rem;
 }
 .div2 {
-	font-weight: bold;
-	font-size: 0.875rem;
 	padding: 0rem 0.25rem;
 }
 .div2 img {
@@ -120,7 +119,7 @@ export default {
 	align-items: flex-end;
 }
 .current-price {
-	font-size: 1rem;
+	font-size: 1.125rem;
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 }
@@ -129,7 +128,6 @@ export default {
 }
 .percentage-change {
 	font-weight: bold;
-	font-size: 0.625rem;
-	color: rgb(44, 218, 44);
+	font-size: 0.875rem;
 }
 </style>

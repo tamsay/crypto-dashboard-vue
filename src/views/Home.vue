@@ -12,11 +12,11 @@
 				<div v-for="(card, index) in cardArray" v-bind:key="index">
 				<CryptoCard
 					:icon="card.icon"
+          :iconColor="card.iconColor"
 					:coinName="card.coinName"
 					:ticker="card.ticker"
 					:currency="card.currency"
 					:currentPrice="card.currentPrice"
-					:gainIndicator="card.gainIndicator"
 					:percentageChange="card.percentageChange"
 					:percentageCount="card.percentageCount"
 					:size="card.size"
@@ -56,22 +56,22 @@ export default {
 			cardArray: [
 				{
 					icon: "B",
+          iconColor: "red",
 					coinName: "Bitcoin",
 					ticker: "BTC",
 					currency: "$",
 					currentPrice: "60000",
-					gainIndicator: "+",
 					percentageChange: "4",
 					percentageCount: "345",
           size: "small"
 				},
 				{
 					icon: "B",
+          iconColor: "purple",
 					coinName: "Bitcoin",
 					ticker: "BTC",
 					currency: "$",
 					currentPrice: "60000",
-					gainIndicator: "+",
 					percentageChange: "4",
 					percentageCount: "345",
           size: "small"

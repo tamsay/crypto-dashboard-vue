@@ -7,11 +7,11 @@
 		>
 			<CryptoCard
 				:icon="card.icon"
+				:iconColor="card.iconColor"
 				:coinName="card.coinName"
-				:ticker="card.ticker"
+				:ticker="card.ticker.toUpperCase()"
 				:currency="card.currency"
 				:currentPrice="card.currentPrice"
-				:gainIndicator="card.gainIndicator"
 				:percentageChange="card.percentageChange"
 				:percentageCount="card.percentageCount"
 				:size="card.size"
@@ -28,33 +28,33 @@ export default {
 			cardArray: [
 				{
 					icon: "B",
+					iconColor:"yellow",
 					coinName: "Bitcoin",
 					ticker: "BTC",
 					currency: "$",
-					currentPrice: "60000",
-					gainIndicator: "+",
-					percentageChange: "4",
-					percentageCount: "345",
+					currentPrice: 60000,
+					percentageChange: -4,
+					percentageCount: 345,
 				},
 				{
-					icon: "B",
-					coinName: "Bitcoin",
-					ticker: "BTC",
+					icon: "E",
+					iconColor:"green",
+					coinName: "Ethereum",
+					ticker: "ETH",
 					currency: "$",
-					currentPrice: "60000",
-					gainIndicator: "+",
-					percentageChange: "4",
-					percentageCount: "345"
+					currentPrice: 5000,
+					percentageChange: 4,
+					percentageCount: 45
 				},
 				{
-					icon: "B",
-					coinName: "Bitcoin",
-					ticker: "BTC",
+					icon: "H",
+					iconColor:"pink",
+					coinName: "Hydro",
+					ticker: "HYDRO",
 					currency: "$",
-					currentPrice: "60000",
-					gainIndicator: "+",
-					percentageChange: "4",
-					percentageCount: "345"
+					currentPrice: 10000,
+					percentageChange: -40,
+					percentageCount: 4
 				},
 			]
 		};
