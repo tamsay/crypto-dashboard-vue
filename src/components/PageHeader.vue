@@ -7,8 +7,9 @@
 			</div>
 			<div class="bottom-row">
 				<span class="currency-symbol">{{ currencySymbol }}</span>
-				<span class="previous-value">{{ previousValue }}</span>
-				<span class="percentage-change">{{ percentageChange }}%</span>
+				<span class="previous-value">{{ previousValue }}</span>		
+				<span :class="['percentage-change', percentageChange >= 0 ? 'positive' : 'negative']">{{ percentageChange >= 0 ? `+${percentageChange}` : `${percentageChange}`}}%</span>
+
 			</div>
 		</div>
 		<div class="flex-row filter-btn-div">
@@ -23,15 +24,19 @@ import FilterButton from "./FilterButton.vue";
 export default {
 	data: () => {
 		return {
-			currentValue: "65000",
+			currentValue: 65000,
 			currency: "USD",
 			currencySymbol: "$",
-			previousValue: "50,000",
-			percentageChange: "8.5"
+			previousValue: 50000,
+			percentageChange: 8.5,
+			profitLoss: "",
 		};
 	},
 	components: {
 		FilterButton
+	},
+	mounted(){
+		this.profitLoss = this.percentageChange >= 0 ? "positive" : "negative"
 	}
 };
 </script>
@@ -58,7 +63,6 @@ export default {
 }
 .percentage-change {
 	margin-left: 0.5rem;
-	color: rgb(6, 187, 6);
 }
 .filter-btn-div {
 	justify-content: flex-end;

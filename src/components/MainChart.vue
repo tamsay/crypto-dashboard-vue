@@ -53,8 +53,8 @@ export default {
 	margin-bottom: 1rem;
 }
 .currency-dropdown {
-	padding: 0.25rem 0.625rem 0rem 0.25rem;
-	font-size: 0.875rem;
+	padding: 0.25rem 0.625rem 0.25rem 0.25rem;
+	font-size: 1rem;
 	color: white;
 	background-color:gray;
 	justify-content: space-around;
