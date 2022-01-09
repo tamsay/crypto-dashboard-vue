@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container flex-col">
 
 	<div class="wrapper flex-col top">
 		<div class="icon-div flex-row"><Icon class="icon" :icon="icons.fireIcon" /></div>
@@ -21,7 +21,7 @@
 		</div>
 	</div>
 
-	<!-- <div class="wrapper flex-col middle">
+	<div class="wrapper flex-col middle">
 		<div class="icon-div flex-row"><Icon class="icon" :icon="icons.fireIcon" /></div>
 		<div class="details-section flex-col col">
 			<div class="flex-col div1">
@@ -31,9 +31,11 @@
 
 			<div class="flex-col div3">
 				<p class="current-price">{{ currency }}{{ currentPrice }}</p>
-				<p class="percentage-change">
-					{{ gainIndicator }}{{ percentageChange }}%
-					<Icon :icon="icons.arrowUpRight" />
+				<p :class="['percentage-change', percentageChange >= 0 ? 'positive' : 'negative']">
+					{{ percentageChange >= 0 ? `+${percentageChange}` : `${percentageChange}`}}%
+					<Icon v-if="percentageChange >= 0" :icon="icons.arrowUpRight" />
+					<Icon v-else :icon="icons.arrowDownRight" />
+					
 				</p>
 			</div>
 		</div>
@@ -49,13 +51,15 @@
 
 			<div class="flex-col div3">
 				<p class="current-price">{{ currency }}{{ currentPrice }}</p>
-				<p class="percentage-change">
-					{{ gainIndicator }}{{ percentageChange }}%
-					<Icon :icon="icons.arrowUpRight" />
+				<p :class="['percentage-change', percentageChange >= 0 ? 'positive' : 'negative']">
+					{{ percentageChange >= 0 ? `+${percentageChange}` : `${percentageChange}`}}%
+					<Icon v-if="percentageChange >= 0" :icon="icons.arrowUpRight" />
+					<Icon v-else :icon="icons.arrowDownRight" />
+					
 				</p>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 </div>
 
@@ -84,48 +88,49 @@ export default {
 	},
 	components: { Icon },
 	methods: {},
-	mounted(){
-		// this.
-	}
+	mounted(){}
 };
 </script>
 
 <style scoped>
 .container {
-	margin-top: 0rem;
-	position: relative;
-	height: 40vh;
+	margin: 0rem;
+	padding: 0rem 3rem;
+	height: 50vh;
+	align-items: flex-start;	
 }
 .wrapper {
 	width: fit-content;
-	background-color: rgb(60, 137, 236);
 	border-radius: 0.5rem;
 	margin: 0rem 0rem;
 	padding: 1.25rem 1rem;
 	align-items: center;
 }
 .top {
-	position: absolute;
-	left: 0%;
-	top: 10%;
-	z-index: 1000;
+	background-color: rgb(60, 137, 236);
+	z-index: 1000; 
+	transform: translateY(100%);
+}
+.tp::after {
+	content: "";
+	background-color: rgb(139, 236, 60);
+	/* z-index: 99; */
+	transform: translateY(-0%) rotate(17.5deg);
+	transform-origin: 50% 100%;
+	height: 100%;
 }
 .middle{
-	top: 10%;
-	position: absolute;
-	left: 0%;
 	z-index: 99;
-	transform: rotate(17.5deg);
+	transform: translateY(-0%) rotate(17.5deg);
 	transform-origin: 50% 100%;
 	background-color: yellow;
+	color: yellow;
 }
 .bottom{
-	position: absolute;
-	left: 0%;
-	top: 10%;
-	transform: rotate(39.5deg);
+	transform: translateY(-100%) rotate(39.5deg);
 	transform-origin: 50% 90%;
 	background-color: red;
+	color: red;
 }
 .icon-div {
 	margin-bottom: 1rem;

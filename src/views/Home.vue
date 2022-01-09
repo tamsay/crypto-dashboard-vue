@@ -9,7 +9,7 @@
 		<div class="col-md-3 aside-wrapper flex-col">
 			<BalanceCard />
 			<div class="asideCardsWrapper">
-				<div v-for="(card, index) in cardArray" v-bind:key="index">
+				<div class="card-wrapper" v-for="(card, index) in cardArray" v-bind:key="index">
 				<CryptoCard
 					:icon="card.icon"
           :iconColor="card.iconColor"
@@ -55,25 +55,25 @@ export default {
 		return {
 			cardArray: [
 				{
-					icon: "B",
-          iconColor: "red",
-					coinName: "Bitcoin",
-					ticker: "BTC",
+					icon: "X",
+          iconColor: "orange",
+					coinName: "Ripple",
+					ticker: "XRP",
 					currency: "$",
-					currentPrice: "60000",
-					percentageChange: "4",
-					percentageCount: "345",
+					currentPrice: 50000,
+					percentageChange: -10,
+					percentageCount: 3,
           size: "small"
 				},
 				{
-					icon: "B",
-          iconColor: "purple",
-					coinName: "Bitcoin",
-					ticker: "BTC",
+					icon: "O",
+          iconColor: "blue",
+					coinName: "Ecomi",
+					ticker: "OMI",
 					currency: "$",
-					currentPrice: "60000",
-					percentageChange: "4",
-					percentageCount: "345",
+					currentPrice: 600,
+					percentageChange: 7,
+					percentageCount: 9,
           size: "small"
 				},
 			],
@@ -99,9 +99,13 @@ export default {
 .aside-wrapper {
 	color: white;
 	justify-content: space-between;
+  align-items: center;
 }
 .asideCardsWrapper{
-	margin-top: 1rem;
+	margin: 1rem 0rem;
+}
+.asideCardsWrapper .card-wrapper{
+  margin: 1rem 0rem 0rem 0rem;
 }
 .chartWrapper{
 	justify-content: center;
