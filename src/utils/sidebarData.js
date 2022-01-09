@@ -1,12 +1,15 @@
 const sidebarData = {
     series: [{
-        name: 'Inflation',
+        name: 'MarketCap',
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
       }],
       chartOptions: {
         chart: {
           height: '100%',
           type: 'bar',
+        },
+        grid: {
+          show: false
         },
         plotOptions: {
           bar: {
@@ -21,9 +24,9 @@ const sidebarData = {
           formatter: function (val) {
             return val + "%";
           },
-          offsetY: -20,
+          offsetY: -10,
           style: {
-            fontSize: '12px',
+            fontSize: '0.625rem',
             colors: ["#fff"]
           }
         },
@@ -49,11 +52,38 @@ const sidebarData = {
               }
             }
           },
-       
           tooltip: {
             enabled: true,
-          }
+          },
+          labels: {
+            show: true,
+            rotate: -45,
+            rotateAlways: false,
+            hideOverlappingLabels: true,
+            showDuplicates: false,
+            trim: true,
+            minHeight: undefined,
+            maxHeight: 120,
+            style: {
+                colors: 'white',
+                fontSize: '0.75rem',
+                // fontFamily: 'Helvetica, Arial, sans-serif',
+                fontWeight: 450,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+            offsetX: 0,
+            offsetY: 0,
+            format: undefined,
+            formatter: undefined,
+            datetimeUTC: true,
+            datetimeFormatter: {
+                year: 'yyyy',
+                month: "MMM 'yy",
+                day: 'dd MMM',
+                hour: 'HH:mm',
+            },
         },
+      },
         yaxis: {
           axisBorder: {
             show: false
@@ -66,17 +96,19 @@ const sidebarData = {
             formatter: function (val) {
               return val + "%";
             }
-          }
-        
+          },        
         },
         title: {
-          text: 'Monthly Inflation in Argentina, 2002',
+          text: 'Monthly MarketCap for 2021',
           floating: false,
           offsetY: 0,
           align: 'center',
           style: {
             color: '#fff'
           }
+        },
+        fill: {
+          colors: ["#00ff00"]
         }
       },
     }

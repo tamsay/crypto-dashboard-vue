@@ -26,7 +26,8 @@ export default {
 	color: white;
 	height: 100%;
 }
-#chart .apexcharts-title-text{
-	fill: white;
-}
+ #chart .apexcharts-tooltip {
+    background: #f3f3f3;
+    color: orange;
+  }
 </style>

@@ -79,5 +79,6 @@ export default {
 }
 .chart-div {
 	width: 100%;
+	margin: 1rem 0rem 0rem 0rem;
 }
 </style>

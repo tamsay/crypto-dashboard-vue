@@ -247,18 +247,92 @@ const chartData = {
             type: 'candlestick',
             height: 350
           },
+          grid: {
+            show: false
+          },
+          plotOptions: {
+            candlestick: {
+              colors: {
+                upward: '#3C90EB',
+                downward: '#DF7D46'
+              },
+              wick: {
+                useFillColor: true,
+              }
+            }
+          },
           title: {
             text: 'CandleStick Chart',
             align: 'left',
+            style : {
+                color: 'white'
+              },
           },
           xaxis: {
-            type: 'datetime'
+            type: 'datetime',
+            labels: {
+              style : {
+                colors: 'white'
+              }
+            },
           },
           yaxis: {
             tooltip: {
               enabled: true
-            }
-          }
+            },
+            labels: {
+              style : {
+                colors: 'white'
+              }
+            },
+          },
+          tooltip: {
+            enabled: true,
+            enabledOnSeries: undefined,
+            shared: false,
+            followCursor: true,
+            intersect: false,
+            inverseOrder: false,
+            // custom: undefined,
+            fillSeriesColor: true,
+            theme: 'dark',
+            style: {
+              fontSize: '12px',
+            },
+            onDatasetHover: {
+                highlightDataSeries: true,
+            },
+            // x: {
+            //     show: true,
+            //     format: 'dd MMM',
+            //     formatter: undefined,
+            // },
+            // y: {
+            //     show: true,
+            //     formatter: undefined,
+            //     title: {
+            //         formatter: (seriesName) => seriesName,
+            //     },
+            // },
+            // z: {
+            //     show: true,
+            //     formatter: undefined,
+            //     title: 'Size: '
+            // },
+            marker: {
+                show: true,
+            },
+            items: {
+               display: 'flex',
+            },
+            fixed: {
+                enabled: false,
+                position: 'topRight',
+                offsetX: 0,
+                offsetY: 0,
+            },
+        },
+        
         },
   };
   
