@@ -82,9 +82,9 @@ p {
 	background-color: gray;
 	padding: 0.5em;
 	border-radius: 0.25rem;
-	width: 70%;
-	margin: 0rem;
+	width: 100%;
 	justify-content: flex-start;
+	align-self: flex-start;
 }
 }
 </style>

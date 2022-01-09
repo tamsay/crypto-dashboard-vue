@@ -8,7 +8,7 @@
 		</div>
 		<div class="col-md-3 aside-wrapper flex-col">
 			<BalanceCard />
-			<div class="asideCardsWrapper">
+			<div class="asideCardsWrapper flex-row">
 				<div class="card-wrapper" v-for="(card, index) in cardArray" v-bind:key="index">
 				<CryptoCard
 					:icon="card.icon"
@@ -103,15 +103,21 @@ export default {
 }
 .asideCardsWrapper{
 	margin: 1rem 0rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .asideCardsWrapper .card-wrapper{
   margin: 1rem 0rem 0rem 0rem;
+  width: 75%;
 }
 .chartWrapper{
 	justify-content: center;
 	margin-top: 1rem;
 }
 @media all and (min-width:768px){
-
+  .asideCardsWrapper .card-wrapper{
+    margin: 1rem 0rem 0rem 0rem;
+    width: 45%;
+  }
 }
 </style>
