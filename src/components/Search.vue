@@ -43,7 +43,7 @@ export default {
 	padding: 0.5em;
 	border-radius: 0.25rem;
 	width: 100%;
-	margin: 0.5rem 0rem;
+	margin: 0.5rem 0rem 1.5rem 0rem;
 	justify-content: flex-start;
 }
 .icon {
