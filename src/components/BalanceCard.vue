@@ -95,9 +95,9 @@ export default {
 <style scoped>
 .container {
 	margin: 0rem;
-	padding: 0rem 3rem;
+	padding: 0rem 0rem;
 	height: 50vh;
-	align-items: flex-start;	
+	align-items: center;	
 }
 .wrapper {
 	width: fit-content;
