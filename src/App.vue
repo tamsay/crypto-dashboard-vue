@@ -34,8 +34,6 @@ export default {
     },
      toggleVerticalMenu(value){
       this.toggleMenu = !value
-      console.log(event)
-      console.log(value)
     }
   }
 };
@@ -67,6 +65,9 @@ export default {
   overflow-y: hidden;
 }
 @media all and (min-width:1200px){
+    .page-container {
+    flex-wrap: nowrap;
+  }
   .mobile-nav-div{
     display: none;
   }
