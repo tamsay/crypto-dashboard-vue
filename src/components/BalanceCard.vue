@@ -95,9 +95,9 @@ export default {
 <style scoped>
 .container {
 	margin: 0rem;
-	padding: 0rem 0rem;
+	padding: 0rem 5rem;
 	height: 50vh;
-	align-items: center;	
+	align-items: flex-start;	
 }
 .wrapper {
 	width: fit-content;
@@ -111,18 +111,10 @@ export default {
 	z-index: 1000; 
 	transform: translateY(100%);
 }
-.tp::after {
-	content: "";
-	background-color: rgb(139, 236, 60);
-	/* z-index: 99; */
-	transform: translateY(-0%) rotate(17.5deg);
-	transform-origin: 50% 100%;
-	height: 100%;
-}
 .middle{
 	z-index: 99;
 	transform: translateY(-0%) rotate(17.5deg);
-	transform-origin: 50% 100%;
+	transform-origin: 50% 92%;
 	background-color: yellow;
 	color: yellow;
 }
@@ -165,8 +157,14 @@ export default {
 	margin-bottom: 1rem;
 }
 .percentage-change {
-	font-weight: bold;
-	font-size: 1rem;
+	font-weight: 600;
+	font-size: 0.875rem;
 	margin-bottom: 1rem;
+}
+
+@media all and (min-width: 768px) {
+	.container {
+	align-items: center;	
+}
 }
 </style>

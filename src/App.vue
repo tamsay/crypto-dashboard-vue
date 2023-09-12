@@ -42,6 +42,8 @@ export default {
 <style scoped>
 .page-container {
 	background-color: #161a1e;
+	background-color: #191734;
+  
 	height: 100%;
   width: 100%;
   /* overflow-y: hidden; */
@@ -63,6 +65,7 @@ export default {
 	color: white;
   min-height: 100vh;
   overflow-y: hidden;
+  align-items: flex-start;
 }
 @media all and (min-width:1200px){
     .page-container {

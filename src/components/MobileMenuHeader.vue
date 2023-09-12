@@ -40,6 +40,9 @@ export default {
 .component-wrapper{
     justify-content: space-between;
     padding: 0.25rem !important;
+    /* background-color: #282748; */
+	background-color: #191734;
+
 }
 .logo-div {
 	width: 100%;

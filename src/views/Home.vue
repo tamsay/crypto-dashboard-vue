@@ -90,7 +90,7 @@ export default {
 
 <style scoped>
 .page-container {
-	background-color: #161a1e;
+	background-color: #191734;
 }
 .page-content-wrapper {
 	color: white;

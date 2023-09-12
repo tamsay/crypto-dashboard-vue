@@ -56,10 +56,12 @@ export default {
 .wrapper {
 	background-color: rgb(238, 131, 117);
 	background-color: rgb(43, 40, 40);
+	background-color: #282748;
 	border-radius: 0.5rem;
 	margin: 0.625rem 0rem;
 	padding: 1rem 0.75rem;
 	width: 100%;
+	box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.125);
 }
 .small{
 	padding: 0.75rem 1rem;
